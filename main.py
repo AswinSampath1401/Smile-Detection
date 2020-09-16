@@ -5,8 +5,12 @@ import numpy as np
 face_cascade = cv2.CascadeClassifier('data\\haarcascade_frontalface_default.xml')
 smile_cascade = cv2.CascadeClassifier('data\\haarcascade_smile.xml')
 
-sample_image = cv2.imread('Images\\smile\\memes.jpg')
-sample_image_gray = cv2.cvtColor(sample_image,cv2.COLOR_BGR2GRAY)
+try:
+    sample_image = cv2.imread('Images\\smile\\hello.jpg')
+    sample_image_gray = cv2.cvtColor(sample_image,cv2.COLOR_BGR2GRAY)
+except cv2.error as e:
+    print("Could not read Image file please check the path")
+    exit()
 face = face_cascade.detectMultiScale(sample_image_gray,1.1,4)
 #print(face)
 x,y,w,h= face[0]
