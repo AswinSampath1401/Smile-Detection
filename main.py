@@ -5,7 +5,7 @@ import numpy as np
 face_cascade = cv2.CascadeClassifier('data\\haarcascade_frontalface_default.xml')
 smile_cascade = cv2.CascadeClassifier('data\\haarcascade_smile.xml')
 
-sample_image = cv2.imread('Images\\Not_smile\\msd.jpg')
+sample_image = cv2.imread('Images\\smile\\memes.jpg')
 sample_image_gray = cv2.cvtColor(sample_image,cv2.COLOR_BGR2GRAY)
 face = face_cascade.detectMultiScale(sample_image_gray,1.1,4)
 #print(face)
@@ -21,6 +21,12 @@ if(len(smile)==0):
     cv2.waitKey(0)
     cv2.destroyAllWindows()  
     exit()
+
+for sx,sy,sw,sh in smile:
+    cv2.rectangle(roi_face_color,(sx,sy),(sx+sw,sy+sh),(0,255,0),2)
+    cv2.putText(sample_image,"Smile",(sx,sy),cv2.FONT_HERSHEY_SIMPLEX,2,(100,100,2),2)
+    cv2.imshow('Smile Detected',sample_image)
+    cv2.waitKey(0)
 sx,sy,sw,sh= smile[0]
 print(smile)
 print(len(smile))
