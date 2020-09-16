@@ -11,19 +11,21 @@ face = face_cascade.detectMultiScale(sample_image_gray,1.1,4)
 #print(face)
 x,y,w,h= face[0]
 cv2.rectangle(sample_image,(x,y),(x+w,y+h),(255,0,0),2)
-
 roi_face_gray = sample_image_gray[y:y+h,x:x+w]
 roi_face_color = sample_image[y:y+h,x:x+w]
 
 smile = smile_cascade.detectMultiScale(roi_face_gray,1.1,4)
 if(len(smile)==0):
     print("No smile detected")
-    cv2.imshow('Sachin',sample_image)  
+    cv2.imshow('Smile Not detected',sample_image)  
     cv2.waitKey(0)
     cv2.destroyAllWindows()  
     exit()
 sx,sy,sw,sh= smile[0]
+print(smile)
+print(len(smile))
 cv2.rectangle(roi_face_color,(sx,sy),(sx+sw,sy+sh),(0,255,0),2)
-cv2.imshow('Sachin',sample_image)
+cv2.putText(sample_image,"Smile",(sx,sy),cv2.FONT_HERSHEY_SIMPLEX,2,(100,100,2),2)
+cv2.imshow('Smile Detected',sample_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
