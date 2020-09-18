@@ -20,3 +20,16 @@
 
 6) See the comments for explanation for each command
 
+
+# Real Time Smile detection 
+
+<p> Process is similar to reading a picture</p>
+
+## Refer comments in the file 
+<a href='relatime_smile_detect.py'>Realtime</a> for line by line understanding
+
+# Outputs
+
+<img src='Images\Screenshots\real_o1.PNG' style="width:300px;height:300px;">
+<span><img src='Images\Screenshots\real_o2.PNG' style="width:300px;height:300px;">
+
