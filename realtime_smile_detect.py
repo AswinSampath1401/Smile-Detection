@@ -19,7 +19,10 @@ def detect(gray, frame):
 	return frame 
 
 
-video_capture = cv2.VideoCapture(0,cv2.CAP_DSHOW) 
+video_capture = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+if not video_capture.isOpened():
+    print("Cannot open camera")
+    exit() 
 while True: 
 # Captures video_capture frame by frame 
 	_, frame = video_capture.read() 
