@@ -1,5 +1,8 @@
 A basic Opencv task to detect whether a person is smiling or not.
 
+<img src="Images/Screenshots/vadivelu_smile.png" style="width:300px;height:300px;",alt="Vadivelu Smiling">
+
+
 memes -> 15,54,50 25(answer) (25,41,39,20) ,(2,5,61,30)
 sachin ->24,56,41,20
 virat-> 99,343,156,78
