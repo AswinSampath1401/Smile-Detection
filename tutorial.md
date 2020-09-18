@@ -26,7 +26,7 @@
 <p> Process is similar to reading a picture</p>
 
 ## Refer comments in the file 
-<a href='relatime_smile_detect.py'>Realtime</a> for line by line understanding
+<a href='realtime_smile_detect.py'>Realtime</a> for line by line understanding
 
 # Outputs
 
