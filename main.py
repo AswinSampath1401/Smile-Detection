@@ -23,8 +23,8 @@ def getmodel(img):
 smile_cascade = cv2.CascadeClassifier('data\\haarcascade_smile.xml')
 
 try:
-    sample_image = cv2.imread('Images\\smile\\img (11).jpg')
-    sample_image = cv2.resize(sample_image,(500,500),interpolation=cv2.INTER_AREA)
+    sample_image = cv2.imread('Images\\smile\\img (3).jpg')
+    sample_image = cv2.resize(sample_image,(1000,1000),interpolation=cv2.INTER_AREA)
     sample_image_gray = cv2.cvtColor(sample_image,cv2.COLOR_BGR2GRAY)
 except cv2.error as e:
     print("Could not read Image file please check the path")
@@ -55,6 +55,7 @@ for face in model:
     smile = smile_cascade.detectMultiScale(roi_face_gray,1.1,4)
     if(len(smile)==0):
         print("No smile detected")
+        cv2.putText(sample_image,"SMILE PLEASE!!",(0,30),cv2.FONT_HERSHEY_SIMPLEX,1,(0,250,0),3)
         cv2.imshow('Smile Not detected',sample_image)  
         cv2.waitKey(0)
         cv2.destroyAllWindows()  
