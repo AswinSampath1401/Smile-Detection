@@ -23,8 +23,8 @@ def getmodel(img):
 smile_cascade = cv2.CascadeClassifier('data\\haarcascade_smile.xml')
 
 try:
-    sample_image = cv2.imread('Images\\smile\\virat.jpg')
-    sample_image = cv2.resize(sample_image,(1000,1000),interpolation=cv2.INTER_AREA)
+    sample_image = cv2.imread('Images\\smile\\img (11).jpg')
+    sample_image = cv2.resize(sample_image,(500,500),interpolation=cv2.INTER_AREA)
     sample_image_gray = cv2.cvtColor(sample_image,cv2.COLOR_BGR2GRAY)
 except cv2.error as e:
     print("Could not read Image file please check the path")
@@ -64,8 +64,8 @@ for face in model:
     #Assumption -> More width is better chance of smile
     smile =sorted(smile,key=lambda x: x[2],reverse=True)
 
-    #Assuming top 5 regions will be more of a smile area
-    smile = smile[:5] #Top 5 regions according to width
+    #Assuming top 3 regions will be more of a smile area
+    smile = smile[:3] #Top 3 regions according to width
     #smile = remove_out_of_scope(smile,face_height,face_width)
     
     print("Smile")
@@ -76,7 +76,7 @@ for face in model:
     for sx,sy,sw,sh in smile:
         cv2.rectangle(roi_face_color,(sx,sy),(sx+sw,sy+sh),(0,255,0),2)
         #cv2.putText(sample_image,"Smile",(sx,sy),cv2.FONT_HERSHEY_SIMPLEX,2,(100,100,2),2)
-        cv2.putText(sample_image,"SMILE",(0,30),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),3)
+        cv2.putText(sample_image,"SMILE",(0,30),cv2.FONT_HERSHEY_SIMPLEX,1,(255,102,255),3)
         cv2.imshow('Smile Detected',sample_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()

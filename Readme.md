@@ -1,6 +1,6 @@
 A basic Opencv task to detect whether a person is smiling or not.
 
-<img src='Images\Screenshots\vadivelu_smile.PNG>
+<img src='Images\Screenshots\vadivelu_smile.PNG'>
 
 
 memes -> 15,54,50 25(answer) (25,41,39,20) ,(2,5,61,30)
